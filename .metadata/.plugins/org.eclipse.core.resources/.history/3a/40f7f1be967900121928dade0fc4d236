@@ -1,0 +1,20 @@
+#ifndef KILLSHOOTER_H
+#define KILLSHOOTER_H
+#include "Commands/Subsystem.h"
+#include "WPILib.h"
+
+/**
+ *
+ *
+ * @author zeitgeist
+ */
+class KillShooter: public Subsystem {
+private:
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+public:
+	KillShooter();
+	void InitDefaultCommand();
+};
+
+#endif
