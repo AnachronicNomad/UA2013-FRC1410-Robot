@@ -1,6 +1,6 @@
 #include "ChassisDrive.h"
 #include "../Robotmap.h"
-#include "../Commands/Drive/TeleOpArcade.h"
+#include "../Commands/Drive/TeleOpTank.h"
 
 ChassisDrive::ChassisDrive() : Subsystem("ChassisDrive") {
 	drive = new RobotDrive(1,2);
@@ -10,7 +10,7 @@ ChassisDrive::ChassisDrive() : Subsystem("ChassisDrive") {
     
 void ChassisDrive::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
-	SetDefaultCommand(new TeleOpArcade());
+	SetDefaultCommand(new TeleOpTank());
 }
 
 
@@ -20,7 +20,7 @@ void ChassisDrive::ArcadeOneStick(Joystick* stick1)
 {
 	drive->ArcadeDrive(stick1);
 }
-void ChassisDrive::TankTwoStick(Joystick* stick1, Joystick* stick2)
+void ChassisDrive::TankTwoStick(float speed1, float speed2)
 {
-	drive->TankDrive(stick1, stick2);
+	drive->TankDrive(speed1, speed2);
 }

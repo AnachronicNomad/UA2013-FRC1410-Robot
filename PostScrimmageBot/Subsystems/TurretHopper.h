@@ -17,6 +17,8 @@ private:
 	DoubleSolenoid *feeder;
 	Solenoid *hopFeed;
 	
+	Compressor *comp;
+	
 	ADXL345_I2C *accel;
 public:
 	TurretHopper();

@@ -17,7 +17,7 @@ public:
 	ChassisDrive();
 	void InitDefaultCommand();
 	void ArcadeOneStick(Joystick* stick);
-	void TankTwoStick(Joystick* stick1, Joystick* stick2);
+	void TankTwoStick(float speed1, float speed2);
 };
 
 #endif

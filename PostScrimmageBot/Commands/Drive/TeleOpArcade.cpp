@@ -12,7 +12,7 @@ void TeleOpArcade::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TeleOpArcade::Execute() {
-	chassis->ArcadeOneStick(oi->GetStick(1));
+	//chassis->ArcadeOneStick(oi->GetStick(1));
 }
 
 // Make this return true when this Command no longer needs to run execute()

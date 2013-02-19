@@ -7,6 +7,9 @@ TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	feeder = new DoubleSolenoid(1,2);
 	hopFeed = new Solenoid(3);
 	
+	comp = new Compressor(1,1);
+	comp->Start();
+	
 	accel = new ADXL345_I2C(1);
 	
 	feeder->Set(DoubleSolenoid::kReverse);
@@ -44,6 +47,7 @@ void TurretHopper::FeederToggle()
 	feeder->Set(DoubleSolenoid::kForward);
 	Wait(0.5);
 	feeder->Set(DoubleSolenoid::kReverse);
+	Wait(0.25);
 }
 void TurretHopper::HopFeedToggle()
 {
