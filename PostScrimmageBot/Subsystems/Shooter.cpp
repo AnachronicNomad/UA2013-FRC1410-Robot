@@ -19,7 +19,7 @@ void Shooter::FiringToggle()
 {
 	firing = !firing;
 	if(firing)
-	{shooterMotor->Set(1.0);}
+	{shooterMotor->Set(-1.0);}
 	else
 	{shooterMotor->Set(0.0);}
 }
