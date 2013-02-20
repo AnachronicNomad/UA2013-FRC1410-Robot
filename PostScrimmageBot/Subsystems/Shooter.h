@@ -14,12 +14,17 @@ private:
 	// for methods that implement subsystem capabilities
 	Jaguar *shooterMotor;
 	
-	bool firing;
+	
+	
+	int counter;
+	double speeds[4];
+	//int qwerty []; 
 public:
 	Shooter();
 	void InitDefaultCommand();
 	void FiringToggle();
 	void TurnOff();
+	void ArraySpeedsInit();
 };
 
 #endif

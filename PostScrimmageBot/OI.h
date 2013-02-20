@@ -10,8 +10,9 @@ private:
 	JoystickButton *raiseTur;
 	JoystickButton *lowerTur;
 	JoystickButton *fire;
-		
-	JoystickButton *shooterShit;
+	JoystickButton *loader;
+	JoystickButton *speedToggler;
+	JoystickButton *killShooter;
 public:
 	OI();
 	double GetStick(int stickNum);

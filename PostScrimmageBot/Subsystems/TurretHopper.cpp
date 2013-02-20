@@ -5,7 +5,12 @@ TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	altitude = new Jaguar(4);
 	hopRotat = new Jaguar(5);
 	feeder = new DoubleSolenoid(1,2);
-	hopFeed = new Solenoid(3);
+	hopFeed1 = new Servo(4);
+	hopFeed2 = new Servo(5);
+	
+	hopFeed1->SetAngle(90);
+	hopFeed2->SetAngle(90);
+	hopLoadOn = false;
 	
 	comp = new Compressor(1,1);
 	comp->Start();
@@ -51,7 +56,17 @@ void TurretHopper::FeederToggle()
 }
 void TurretHopper::HopFeedToggle()
 {
-	hopFeed->Set(true);
-	Wait(0.5);
-	hopFeed->Set(false);
+	hopLoadOn = !hopLoadOn;
+	if(hopLoadOn)
+	{
+		hopFeed1->SetAngle(180);
+		hopFeed2->SetAngle(180);
+		Wait(0.5);
+	}
+	else
+	{
+		hopFeed1->SetAngle(90);
+		hopFeed2->SetAngle(90);
+		Wait(0.5);
+	}
 }

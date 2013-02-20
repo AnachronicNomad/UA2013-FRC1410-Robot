@@ -15,7 +15,10 @@ private:
 	Jaguar *altitude;
 	Jaguar *hopRotat;
 	DoubleSolenoid *feeder;
-	Solenoid *hopFeed;
+	Servo *hopFeed1;
+	Servo *hopFeed2;
+	
+	bool hopLoadOn;
 	
 	Compressor *comp;
 	

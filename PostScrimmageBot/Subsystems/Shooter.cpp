@@ -3,8 +3,8 @@
 
 Shooter::Shooter() : Subsystem("Shooter") {
 	shooterMotor = new Jaguar(3);
-	
-	firing = false;
+	this->ArraySpeedsInit();
+	counter =-1;
 }
     
 void Shooter::InitDefaultCommand() {
@@ -17,14 +17,21 @@ void Shooter::InitDefaultCommand() {
 // here. Call these from Commands.
 void Shooter::FiringToggle()
 {
-	firing = !firing;
-	if(firing)
-	{shooterMotor->Set(-1.0);}
-	else
-	{shooterMotor->Set(0.0);}
+	counter++;
+	if(counter == 4)
+	{counter = 0;}
+	shooterMotor->Set(speeds[counter]);
 }
 void Shooter::TurnOff()
 {
-	firing = false;
 	shooterMotor->Set(0.0);
+	counter = 0;
+}
+
+void Shooter::ArraySpeedsInit()
+{
+	speeds[0] = 0.0;
+	speeds[1] = -0.50;
+	speeds[2] = -0.60;
+	speeds[3] = -0.70;
 }
