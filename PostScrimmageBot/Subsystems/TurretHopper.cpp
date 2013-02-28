@@ -1,5 +1,6 @@
 #include "TurretHopper.h"
 #include "../Robotmap.h"
+#include <math.h>
 
 TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	altitude = new Jaguar(4);
@@ -61,4 +62,14 @@ void TurretHopper::HopFeedToggle()
 				}
 		Wait(0.5);
 	}
+}
+
+double TurretHopper::GetTiltAngle()
+{
+	double acceleration = accel->GetAcceleration(ADXL345_I2C::kAxis_X);
+	acceleration = acceleration *= 1000;
+	acceleration = floor(acceleration);
+	acceleration = acceleration *= 0.001;
+	
+	return floor(asin(acceleration) * 180/3.1415926); 
 }
