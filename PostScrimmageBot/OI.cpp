@@ -21,7 +21,7 @@ OI::OI() {
 	raiseTur->WhileHeld(new AltitudeDirCont(true));
 	lowerTur->WhileHeld(new AltitudeDirCont(false));
 	fire->WhileHeld(new Fire());
-	load->WhenPressed(new Load());
+	loader->WhenPressed(new Load());
 	speedToggler->WhenPressed(new ToggleShooter());
 	killShooter->WhenPressed(new KillShooter());
 }
