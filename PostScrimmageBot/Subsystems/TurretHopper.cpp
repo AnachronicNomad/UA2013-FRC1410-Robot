@@ -32,21 +32,7 @@ void TurretHopper::AltitudeControl(double speed)
 {
 	altitude->Set(speed);
 }
-void TurretHopper::RotatBump(bool left)
-{
-	if(left)
-	{
-		hopRotat->Set(-0.5);
-		Wait(0.75);
-		hopRotat->Set(0.0);
-	}
-	else
-	{
-		hopRotat->Set(0.5);
-		Wait(0.75);
-		hopRotat->Set(0.0);
-	}
-}
+
 void TurretHopper::FeederToggle()
 {
 	feeder->Set(DoubleSolenoid::kForward);

@@ -27,7 +27,6 @@ public:
 	TurretHopper();
 	void InitDefaultCommand();
 	void AltitudeControl(double speed);
-	void RotatBump(bool left);
 	void FeederToggle();
 	void HopFeedToggle();
 	double GetTiltAngle();

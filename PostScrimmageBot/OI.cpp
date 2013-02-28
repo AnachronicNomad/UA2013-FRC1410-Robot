@@ -5,7 +5,7 @@
 #include "Commands/TurHop/AltitudeDirCont.h"
 #include "Commands/TurHop/Fire.h"
 #include "Commands/TurHop/Load.h"
-#include "Commands/TurHop/RotateHopper.h"
+
 
 OI::OI() {
 	// Process operator interface input here.
