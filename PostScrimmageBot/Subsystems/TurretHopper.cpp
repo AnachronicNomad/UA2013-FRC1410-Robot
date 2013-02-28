@@ -5,11 +5,13 @@ TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	altitude = new Jaguar(4);
 	hopRotat = new Jaguar(5);
 	feeder = new DoubleSolenoid(1,2);
-	hopFeed1 = new Servo(4);
-	hopFeed2 = new Servo(5);
 	
-	hopFeed1->SetAngle(90);
-	hopFeed2->SetAngle(90);
+	for(int i=0; i<3;i++)
+	{
+		hopperIndexer[i] = new Servo(5 + i);
+		hopperIndexer[i]->SetAngle(90.0);
+	}
+	
 	hopLoadOn = false;
 	
 	comp = new Compressor(1,1);
@@ -45,14 +47,18 @@ void TurretHopper::HopFeedToggle()
 	hopLoadOn = !hopLoadOn;
 	if(hopLoadOn)
 	{
-		hopFeed1->SetAngle(180);
-		hopFeed2->SetAngle(180);
+		for(int i = 3;i<3;i++)
+		{
+			hopperIndexer[i]->SetAngle(180.0);
+		}
 		Wait(0.5);
 	}
 	else
 	{
-		hopFeed1->SetAngle(90);
-		hopFeed2->SetAngle(90);
+		for(int i = 3;i<3;i++)
+				{
+					hopperIndexer[i]->SetAngle(90.0);
+				}
 		Wait(0.5);
 	}
 }

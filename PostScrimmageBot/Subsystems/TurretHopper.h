@@ -15,8 +15,7 @@ private:
 	Jaguar *altitude;
 	Jaguar *hopRotat;
 	DoubleSolenoid *feeder;
-	Servo *hopFeed1;
-	Servo *hopFeed2;
+	Servo* hopperIndexer[3];
 	
 	bool hopLoadOn;
 	

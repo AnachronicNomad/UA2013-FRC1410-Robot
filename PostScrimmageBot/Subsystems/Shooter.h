@@ -25,6 +25,7 @@ public:
 	void FiringToggle();
 	void TurnOff();
 	void ArraySpeedsInit();
+	void SetShooterSpeed(float speed);
 };
 
 #endif

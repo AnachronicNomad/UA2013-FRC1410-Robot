@@ -35,3 +35,9 @@ void Shooter::ArraySpeedsInit()
 	speeds[2] = -0.60;
 	speeds[3] = -0.70;
 }
+
+void Shooter::SetShooterSpeed(float speed)
+{
+	counter = 0;
+	shooterMotor->Set(speed);
+}
