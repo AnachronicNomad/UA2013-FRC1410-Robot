@@ -10,11 +10,11 @@ private:
 	
 	virtual void RobotInit() {
 		CommandBase::init();
-		autonomousCommand = new AutoSeqGroup();
 		lw = LiveWindow::GetInstance();
 	}
 	
 	virtual void AutonomousInit() {
+		autonomousCommand = new AutoSeqGroup();
 		autonomousCommand->Start();
 	}
 	
