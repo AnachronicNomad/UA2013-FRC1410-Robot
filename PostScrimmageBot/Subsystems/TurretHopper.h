@@ -35,6 +35,7 @@ public:
 	void FeederToggle();
 	void HopFeedToggle();
 	void SetFiringOff();
+	void HopRampDown();
 	double GetTiltAngle();
 };
 

@@ -37,8 +37,8 @@ void Shooter::ArraySpeedsInit()
 {
 	speeds[0] = 0.0;
 	speeds[1] = -0.50;
-	speeds[2] = -0.60;
-	speeds[3] = -0.70;
+	speeds[2] = -0.63;
+	speeds[3] = -0.75;
 }
 
 void Shooter::SetShooterSpeed(float speed)

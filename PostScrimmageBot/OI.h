@@ -11,6 +11,7 @@ private:
 	JoystickButton *raiseTur;
 	JoystickButton *lowerTur;
 	JoystickButton *fire;
+	JoystickButton *potShot;
 	//JoystickButton *loader;
 	JoystickButton *speedToggler;
 	JoystickButton *killShooter;

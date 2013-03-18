@@ -16,6 +16,7 @@ TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	hopFeedFront->SetAngle(180);
 	
 	hopRamp = new Servo(8);
+	hopRamp->SetAngle(90);
 	
 	comp = new Compressor(1,1);
 	comp->Start();
@@ -74,6 +75,12 @@ void TurretHopper::SetFiringOff()
 	hopFeedFront->SetAngle(180);
 	hopFeedb1->SetAngle(90);
 	hopFeedb1->SetAngle(90);
+}
+
+void TurretHopper::HopRampDown()
+{
+	hopRamp->SetAngle(180);
+	Wait(0.25);
 }
 
 double TurretHopper::GetTiltAngle()
