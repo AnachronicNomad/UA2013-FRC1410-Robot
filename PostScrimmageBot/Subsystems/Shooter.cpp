@@ -4,7 +4,8 @@
 Shooter::Shooter() : Subsystem("Shooter") {
 	shooterMotor = new Jaguar(3);
 	this->ArraySpeedsInit();
-	counter =-1;
+	counter =0;
+	SmartDashboard::PutNumber("Speed Percentage", speeds[counter]);
 }
     
 void Shooter::InitDefaultCommand() {
@@ -17,15 +18,19 @@ void Shooter::InitDefaultCommand() {
 // here. Call these from Commands.
 void Shooter::FiringToggle()
 {
-	counter++;
+	++counter;
 	if(counter == 4)
 	{counter = 0;}
 	shooterMotor->Set(speeds[counter]);
+	SmartDashboard::PutNumber("Speed Percentage", speeds[counter]);
+	Wait(0.05);
 }
 void Shooter::TurnOff()
 {
 	shooterMotor->Set(0.0);
 	counter = 0;
+	SmartDashboard::PutNumber("Speed Percentage", speeds[counter]);
+	Wait(0.05);
 }
 
 void Shooter::ArraySpeedsInit()
@@ -40,4 +45,6 @@ void Shooter::SetShooterSpeed(float speed)
 {
 	counter = 0;
 	shooterMotor->Set(speed);
+	SmartDashboard::PutNumber("Speed Percentage", speeds[counter]);
+	Wait(0.05);
 }

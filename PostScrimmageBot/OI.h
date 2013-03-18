@@ -5,17 +5,18 @@
 
 class OI {
 private:
-	Joystick *stick;
+	Joystick *stick1;
+	Joystick *stick2;
 	
 	JoystickButton *raiseTur;
 	JoystickButton *lowerTur;
 	JoystickButton *fire;
-	JoystickButton *loader;
+	//JoystickButton *loader;
 	JoystickButton *speedToggler;
 	JoystickButton *killShooter;
 public:
 	OI();
-	double GetStick(int stickNum);
+	double GetStickAxis(bool left);
 };
 
 #endif

@@ -12,7 +12,7 @@ void TeleOpTank::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TeleOpTank::Execute() {
-	chassis->TankTwoStick(oi->GetStick(1),oi->GetStick(2));
+	chassis->TankTwoStick(oi->GetStickAxis(true),oi->GetStickAxis(false));
 }
 
 // Make this return true when this Command no longer needs to run execute()

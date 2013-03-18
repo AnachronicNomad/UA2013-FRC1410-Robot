@@ -19,8 +19,10 @@ void ChassisDrive::InitDefaultCommand() {
 void ChassisDrive::ArcadeOneStick(Joystick* stick1)
 {
 	drive->ArcadeDrive(stick1);
+	Wait(0.05);
 }
 void ChassisDrive::TankTwoStick(float speed1, float speed2)
 {
 	drive->TankDrive(speed1, speed2);
+	Wait(0.05);
 }
