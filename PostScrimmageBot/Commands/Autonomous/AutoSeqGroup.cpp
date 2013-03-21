@@ -24,6 +24,7 @@ AutoSeqGroup::AutoSeqGroup() {
         // arm.
 	
 	AddParallel(new DropRamp());
+	/**
 	AddParallel(new TiltToAngle(SmartDashboard::GetNumber("Desired Auto Angle")));
 	AddSequential(new ToggleShooter());
 	
@@ -31,4 +32,5 @@ AutoSeqGroup::AutoSeqGroup() {
 	AddSequential(new SingleFire());
 	AddSequential(new SingleFire());
 	AddSequential(new KillShooter());
+	**/
 }

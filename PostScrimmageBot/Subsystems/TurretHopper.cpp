@@ -23,7 +23,7 @@ TurretHopper::TurretHopper() : Subsystem("TurretHopper") {
 	
 	accel = new ADXL345_I2C(1);
 	acceleration = 0.0;
-	SmartDashboard::PutNumber("Tilt Angle", GetTiltAngle());
+	//SmartDashboard::PutNumber("Tilt Angle", GetTiltAngle());
 	
 	feeder->Set(DoubleSolenoid::kReverse);
 }
@@ -63,7 +63,7 @@ void TurretHopper::HopFeedToggle()
 	{
 		hopFeedFront->SetAngle(180);
 		hopFeedb1->SetAngle(90);
-		hopFeedb1->SetAngle(90);
+		hopFeedb2->SetAngle(90);
 		Wait(0.05);
 	}
 }
@@ -74,7 +74,7 @@ void TurretHopper::SetFiringOff()
 	feeder->Set(DoubleSolenoid::kReverse);
 	hopFeedFront->SetAngle(180);
 	hopFeedb1->SetAngle(90);
-	hopFeedb1->SetAngle(90);
+	hopFeedb2->SetAngle(90);
 }
 
 void TurretHopper::HopRampDown()

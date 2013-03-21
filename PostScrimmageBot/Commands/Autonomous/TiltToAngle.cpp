@@ -21,7 +21,7 @@ void TiltToAngle::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool TiltToAngle::IsFinished() {
-	return (turhop->GetTiltAngle() > desiredAngle - 1) && (turhop->GetTiltAngle() < desiredAngle + 1);
+	return (turhop->GetTiltAngle() > desiredAngle - 0.5) && (turhop->GetTiltAngle() < desiredAngle + 0.5);
 }
 
 // Called once after isFinished returns true

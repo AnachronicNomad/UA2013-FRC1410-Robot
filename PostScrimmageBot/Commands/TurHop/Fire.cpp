@@ -12,10 +12,11 @@ void Fire::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void Fire::Execute() {
-	Wait(0.25);
+	Wait(0.5);
 	turhop->HopFeedToggle();
-	Wait(0.25);
+	Wait(0.5);
 	turhop->FeederToggle();
+	Wait(0.5);
 	turhop->HopFeedToggle();	
 }
 

@@ -5,7 +5,7 @@
 
 class CommandBasedRobot : public IterativeRobot {
 private:
-	Command *autonomousCommand;
+	//Command *autonomousCommand;
 	LiveWindow *lw;
 	
 	virtual void RobotInit() {
@@ -14,8 +14,8 @@ private:
 	}
 	
 	virtual void AutonomousInit() {
-		autonomousCommand = new AutoSeqGroup();
-		autonomousCommand->Start();
+		//autonomousCommand = new AutoSeqGroup();
+		//autonomousCommand->Start();
 	}
 	
 	virtual void AutonomousPeriodic() {
@@ -27,7 +27,7 @@ private:
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		autonomousCommand->Cancel();
+		//autonomousCommand->Cancel();
 	}
 	
 	virtual void TeleopPeriodic() {

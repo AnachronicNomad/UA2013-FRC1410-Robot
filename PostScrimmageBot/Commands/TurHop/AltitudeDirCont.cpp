@@ -12,12 +12,12 @@ void AltitudeDirCont::Initialize() {
 	{turhop->AltitudeControl(0.9);}
 	else
 	{turhop->AltitudeControl(-0.9);}
-	SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
+	//SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
 }
 
 // Called repeatedly when this Command is scheduled to run
 void AltitudeDirCont::Execute() {
-	SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
+	//SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
 	Wait(0.5);
 }
 
