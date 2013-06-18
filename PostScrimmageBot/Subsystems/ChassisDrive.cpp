@@ -4,8 +4,8 @@
 
 ChassisDrive::ChassisDrive() : Subsystem("ChassisDrive") {
 	drive = new RobotDrive(1,2);
-	drive->SetExpiration(0.1);
 	drive->SetSafetyEnabled(false);
+	drive->SetExpiration(0.1);
 }
     
 void ChassisDrive::InitDefaultCommand() {
@@ -19,10 +19,8 @@ void ChassisDrive::InitDefaultCommand() {
 void ChassisDrive::ArcadeOneStick(Joystick* stick1)
 {
 	drive->ArcadeDrive(stick1);
-	Wait(0.05);
 }
 void ChassisDrive::TankTwoStick(float speed1, float speed2)
 {
 	drive->TankDrive(speed1, speed2);
-	Wait(0.05);
 }

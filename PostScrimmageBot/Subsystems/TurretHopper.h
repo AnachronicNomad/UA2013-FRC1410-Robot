@@ -15,28 +15,21 @@ private:
 	Jaguar *altitude;
 	
 	DoubleSolenoid *feeder;
-	
-	Servo* hopFeedb1;
-	Servo* hopFeedb2;
-	Servo* hopFeedFront;
-	
-	Servo* hopRamp;
-	
-	bool hopLoadOn;
-	
+		
 	Compressor *comp;
 	
+	AnalogChannel *pot;
+	
 	ADXL345_I2C *accel;
-	double acceleration;
+	
 public:
 	TurretHopper();
 	void InitDefaultCommand();
 	void AltitudeControl(double speed);
 	void FeederToggle();
-	void HopFeedToggle();
 	void SetFiringOff();
-	void HopRampDown();
 	double GetTiltAngle();
+	double GetPotAngle();
 };
 
 #endif

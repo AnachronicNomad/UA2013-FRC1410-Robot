@@ -12,13 +12,13 @@ class Shooter: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Jaguar *shooterMotor;
-	
-	
+	Jaguar *shooterFrontMotor;
+	Jaguar *shooterBackMotor;	
 	
 	int counter;
-	double speeds[4];
-	//int qwerty []; 
+	double speedsFront[6];
+	double speedsBack[6];
+	
 public:
 	Shooter();
 	void InitDefaultCommand();

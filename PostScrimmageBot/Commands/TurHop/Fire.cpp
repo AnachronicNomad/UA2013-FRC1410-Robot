@@ -7,21 +7,16 @@ Fire::Fire() {
 
 // Called just before this Command runs the first time
 void Fire::Initialize() {
-	
 }
 
 // Called repeatedly when this Command is scheduled to run
 void Fire::Execute() {
-	Wait(0.5);
-	turhop->HopFeedToggle();
-	Wait(0.5);
 	turhop->FeederToggle();
-	Wait(0.5);
-	turhop->HopFeedToggle();	
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool Fire::IsFinished() {
+	
 	return false;
 }
 

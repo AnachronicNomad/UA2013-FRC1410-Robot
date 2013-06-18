@@ -1,21 +1,26 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/Autonomous/AutoSeqGroup.h"
+#include "Commands/Shooter/KillShooter.h"
 #include "CommandBase.h"
 
 class CommandBasedRobot : public IterativeRobot {
 private:
-	//Command *autonomousCommand;
+	Command *autonomousCommand;
+	Command *shooterSafety;
+	
 	LiveWindow *lw;
 	
 	virtual void RobotInit() {
 		CommandBase::init();
+		autonomousCommand = new AutoSeqGroup();
+		shooterSafety = new KillShooter();
 		lw = LiveWindow::GetInstance();
 	}
 	
 	virtual void AutonomousInit() {
-		//autonomousCommand = new AutoSeqGroup();
-		//autonomousCommand->Start();
+		
+		autonomousCommand->Start();
 	}
 	
 	virtual void AutonomousPeriodic() {
@@ -27,6 +32,7 @@ private:
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
+		
 		//autonomousCommand->Cancel();
 	}
 	
@@ -36,6 +42,12 @@ private:
 	
 	virtual void TestPeriodic() {
 		lw->Run();
+	}
+	virtual void DisabledInit()
+	{
+		shooterSafety->Start();
+		Wait(0.25);
+		shooterSafety->Cancel();
 	}
 };
 

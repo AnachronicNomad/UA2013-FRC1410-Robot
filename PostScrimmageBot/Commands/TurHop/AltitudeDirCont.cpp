@@ -17,8 +17,8 @@ void AltitudeDirCont::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void AltitudeDirCont::Execute() {
-	//SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
-	Wait(0.5);
+	SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
+	SmartDashboard::PutNumber("Potentiometer", turhop->GetPotAngle());
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -35,4 +35,6 @@ void AltitudeDirCont::End() {
 // subsystems is scheduled to run
 void AltitudeDirCont::Interrupted() {
 	turhop->AltitudeControl(0.0);
+	SmartDashboard::PutNumber("Tilt Angle", turhop->GetTiltAngle());
+	SmartDashboard::PutNumber("Potentiometer", turhop->GetPotAngle());
 }

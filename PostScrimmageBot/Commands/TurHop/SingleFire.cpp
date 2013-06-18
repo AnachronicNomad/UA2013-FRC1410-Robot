@@ -2,16 +2,12 @@
 
 SingleFire::SingleFire() {
 	// Use requires() here to declare subsystem dependencies
-	// eg. requires(chassis);
+	Requires(turhop);
 }
 
 // Called just before this Command runs the first time
 void SingleFire::Initialize() {
-	Wait(0.25);
-		turhop->HopFeedToggle();
-		Wait(0.25);
 		turhop->FeederToggle();
-		turhop->HopFeedToggle();
 }
 
 // Called repeatedly when this Command is scheduled to run

@@ -12,13 +12,13 @@ OI::OI() {
 	stick1 = new Joystick(1);
 	stick2 = new Joystick(2);
 	
-	raiseTur = new JoystickButton(stick2, 3);
-	lowerTur = new JoystickButton(stick2, 2);
+	raiseTur = new JoystickButton(stick2, 2);
+	lowerTur = new JoystickButton(stick2, 1);
 	fire = new JoystickButton(stick2, 6);
-	potShot = new JoystickButton(stick2, 8);
+	potShot = new JoystickButton(stick2, 5);
 	//loader = new JoystickButton(stick2, 5);
 	speedToggler = new JoystickButton(stick2, 4);
-	killShooter = new JoystickButton(stick2, 1);
+	killShooter = new JoystickButton(stick2, 3);
 		
 	raiseTur->WhileHeld(new AltitudeDirCont(true));
 	lowerTur->WhileHeld(new AltitudeDirCont(false));

@@ -1,5 +1,5 @@
-#ifndef DROPRAMP_H
-#define DROPRAMP_H
+#ifndef TILTTOPOTANGLE_H
+#define TILTTOPOTANGLE_H
 
 #include "../../CommandBase.h"
 
@@ -8,9 +8,12 @@
  *
  * @author ProgEnv
  */
-class DropRamp: public CommandBase {
+class TiltToPotAngle: public CommandBase {
+private:
+	float desiredVoltage;
+	
 public:
-	DropRamp();
+	TiltToPotAngle(float inputVoltage);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
