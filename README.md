@@ -9,4 +9,5 @@ Compilation is done using a modified GCC 4.8 compiler provided by FRC. It target
 
 The code uses the Command Based Framework from the WPILib. Bear this in mind while compiling. 
 
-Currently, this is released under no license. 
+LICENSE is the BSD 3-Clause License distributed with WPILib. Since this project is a dependency, it is released under
+the same License.
